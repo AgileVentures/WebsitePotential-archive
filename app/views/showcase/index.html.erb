@@ -1,13 +1,25 @@
-<h1>Get free help developing websites for your charity</h1>
-<h3>Please see below other projects AgileVentures has helped in the past.</h3> 
+<body>
+  <div class="main">
 
-<% if @projects.any? %>
-  <% @projects.each do |project| %>
-    <%= render partial: 'partials/project', locals: {project: project} %>
-  <% end %>
-<% else %>
-  <h1>No projects in showcase!</h1>
-<% end %>
+  <section class="page1">
+    <h1>Get free help developing websites for your charity</h1>
+    <h3>Please see below other projects AgileVentures has helped in the past.</h3>
+  </section>
 
-<a href='projects/new'>Add a project</a>
-<h1><%= link_to "Click here to request help for your charity", new_charity_registration_path %></h1>
+    <% if @projects.any? %>
+      <% @projects.each do |project| %>
+        <section class="page2">
+          <%= render partial: 'partials/project', locals: {project: project} %>
+        </section>
+      <% end %>
+    <% else %>
+      <h1>No projects in showcase!</h1>
+    <% end %>
+
+  <section class="page3">
+    <a href='projects/new'>Add a project</a>
+    <h1><%= link_to "Click here to request help for your charity", new_charity_registration_path %></h1>
+  </section>
+
+  </div>
+</body>
